@@ -16,12 +16,32 @@ header {
   padding: 15px 0;
 }
 
+header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title-section {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.logo {
+  height: 50px;
+  margin-right: 15px;
+}
+
 header h1 {
   margin: 0;
 }
 
 nav {
   margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 nav a {
@@ -32,10 +52,43 @@ nav a {
 }
 
 .hero {
-  background: url('https://images.unsplash.com/photo-1599058917212-d750089bc07e') center/cover no-repeat;
+  position: relative;
   color: white;
   padding: 100px 0;
   text-align: center;
+  overflow: hidden;
+}
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.slideshow img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: fade 18s infinite;
+}
+
+.slideshow img:nth-child(1) { animation-delay: 0s; }
+.slideshow img:nth-child(2) { animation-delay: 4.5s; }
+.slideshow img:nth-child(3) { animation-delay: 9s; }
+.slideshow img:nth-child(4) { animation-delay: 13.5s; }
+
+@keyframes fade {
+  0% { opacity: 0; }
+  15% { opacity: 1; }
+  85% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 .hero h2 {
@@ -54,6 +107,13 @@ nav a {
 
 .content {
   padding: 40px 0;
+}
+
+.bio-photo {
+  float: right;
+  width: 200px;
+  margin-left: 20px;
+  border-radius: 5px;
 }
 
 footer {
